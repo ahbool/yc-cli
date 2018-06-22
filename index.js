@@ -7,11 +7,10 @@ const ora = require('ora')
 const chalk = require('chalk')
 const symbols = require('log-symbols')
 
-program.version('1.0.0', '-v, --version')
-	.command('init <name>')
-	.action((name) => {
 
-		const projectName = name
+program.version('1.0.0', '-v, --version')
+	.command('init <project-name>')
+	.action((projectName) => {
 
 		if(fs.existsSync(projectName)){
             console.log(symbols.error, chalk.red('项目已存在'))
@@ -31,7 +30,19 @@ program.version('1.0.0', '-v, --version')
 				type: 'input',
 				name: 'author',
 				message: '请输入作者名称:'
-			}
+			},
+      {
+      type: 'rawlist',
+        name: 'ui',
+        message: '选择要使用的UI框架',
+        choices: ['Vue', 'React']
+      },
+      {
+        type: 'rawlist',
+        name: 'tool',
+        message: '选择要使用的构建工具',
+        choices: ['Fis3', 'Webpack'],
+      }
 		]).then((answers) => {
 
 			const spinner = ora({text:'正在下载模板...'}).start()
@@ -62,23 +73,28 @@ program.version('1.0.0', '-v, --version')
 						console.log(symbols.error, chalk.red('模板文件解析错误'))
 					}
 
+          initialize(answers.ui)
+          initialize(answers.tool)
+
 					console.log(symbols.success, chalk.green('项目初始化完成'))
 				}
 			})
 		})
 	})
 
-function initVue(){
+var initialize = {
+  'Vue': function(){
 
-}
-function initReact(){
+  },
+  'React': function(){
 
-}
-function initWebpack(){
+  },
+  'Webpack': function(){
 
-}
-function initFis(){
+  },
+  'Fis3': function(){
 
+  }
 }
 
 program.parse(process.argv)
