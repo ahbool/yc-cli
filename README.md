@@ -17,5 +17,5 @@ ycii init testProjectName
 
 ## 功能
 
-> 项目可选择基于 Vue、React
-> 构建工具可选择 fis3、webpack
+* 项目可选择基于 Vue、React
+* 构建工具可选择 fis3、webpack
