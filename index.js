@@ -38,7 +38,7 @@ program.version('1.0.0', '-v, --version')
 
 			const targetPath = projectName
 
-			download('github:sindresorhus/log-symbols', targetPath, (err) => {
+			download('github:ahbool/H5Template#vue', targetPath, (err) => {
 
 				spinner.succeed()
 
