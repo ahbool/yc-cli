@@ -34,7 +34,7 @@ program.version('1.0.0', '-v, --version')
       {
       type: 'rawlist',
         name: 'ui',
-        message: '选择要使用的UI框架',
+        message: '选择模板类型',
         choices: ['Vue', 'React']
       },
       {

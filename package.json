@@ -21,7 +21,7 @@
     "design",
     "console"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bin":{
     "ycii": "index.js"
   },
@@ -36,5 +36,9 @@
     "inquirer": "^6.0.0",
     "log-symbols": "^2.2.0",
     "ora": "^2.1.0"
-  }
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  },
 }
